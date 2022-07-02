@@ -1,0 +1,27 @@
+<!--
+<form action='/users' accept-charset="UTF-8" method="post">
+<div style="display: flex;margin: 5em auto auto auto; justify-content: space-between;flex-direction: column;align-items: flex-start; gap: 0.5em; border-radius: 0.5em; box-shadow: 0 0 2em gray; padding: 2em; width: 10%">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="user[username]">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="user[email]">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="user[password]">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <input type="submit" value="Login">
+</div>
+
+</form>
+-->
+<%= form_with model: @user do |form| %>
+  <%= form.label "Username Here:" %>
+  <%= form.text_field :username, :value => "Test" %>
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: "email@example.com" %>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <%= form.submit "Create" %>
+<% end %>
